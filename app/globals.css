@@ -1,0 +1,138 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 100% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 100% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 100% 7%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 100% 7%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 25 10% 95%;
+    --muted-foreground: 240 5% 45%;
+    --accent: 12 83% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5% 84%;
+    --input: 240 5% 84%;
+    --ring: 25 95% 53%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 100% 7%;
+    --foreground: 0 0% 95%;
+    --card: 240 100% 7%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 100% 7%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 240 10% 3.9%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 83% 55%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 25 95% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+}
+
+.gsap-reveal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.roadmap-item {
+  position: relative;
+}
+
+.roadmap-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #e85d04;
+  transform: translateX(-50%);
+}
+
+.roadmap-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 24px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #f48c06;
+  transform: translateX(-50%);
+}
+
+/* Form styling */
+.form-floating-label {
+  position: relative;
+}
+
+.form-floating-label input {
+  height: 3.5rem;
+  padding-top: 1.5rem;
+}
+
+.form-floating-label label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  pointer-events: none;
+  transform-origin: 0 0;
+  transition: opacity .15s ease-in-out, transform .15s ease-in-out;
+}
+
+.form-floating-label input:focus-within ~ label,
+.form-floating-label input:not(:placeholder-shown) ~ label {
+  transform: scale(0.85) translateY(-0.5rem);
+  opacity: 0.65;
+}
+
+/* Gradient buttons */
+.gradient-button {
+  background: linear-gradient(to right, #e85d04, #f48c06);
+  transition: all 0.3s ease;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(to right, #dc2f02, #e85d04);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 93, 4, 0.3);
+}
