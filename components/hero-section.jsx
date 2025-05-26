@@ -107,6 +107,9 @@ export default function HeroSection() {
                 src="/hero_logo.jpg?height=800&width=600"
                 alt="Students learning"
                 className="relative max-w-full max-h-full object-contain"
+                priority 
+                quality={80}
+                
               />
               
             </div>
