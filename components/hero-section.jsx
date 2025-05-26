@@ -101,15 +101,16 @@ export default function HeroSection() {
               </Button>
             </div>
           </div>
-          <div ref={imageRef} className="relative h-[400px] lg:h-[500px] flex items-center justify-center">
-            <div className="absolute w-full h-full bg-gradient-to-tr from-orange-mid/10 to-navy-deep/5 dark:from-orange-mid/20 dark:to-navy-deep/20 rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-tr from-orange-mid/20 to-transparent" />
+          <div ref={imageRef} className="relative h-[400px] lg:h-[500px] flex items-center justify-center object-contain">
+            <div className="absolute max-w-full max-h-full bg-gradient-to-tr from-orange-mid/10 to-navy-deep/5 dark:from-orange-mid/20 dark:to-navy-deep/20 rounded-2xl overflow-hidden">
+             <img
+                src="/hero_logo.jpg?height=800&width=600"
+                alt="Students learning"
+                className="relative max-w-full max-h-full object-contain"
+              />
+              
             </div>
-            <img
-              src="/placeholder.svg?height=500&width=600"
-              alt="Students learning"
-              className="relative z-10 max-h-full object-contain"
-            />
+
           </div>
         </div>
       </div>
